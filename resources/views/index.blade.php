@@ -76,8 +76,12 @@
         <div class="header-wrapper" id="header-wrapper">
             <div class="header-left">
                 <div class="logo">
-                    <a href="index.html">
-                        <img
+                    <a href="{{url('/')}}">
+                        <img style="    max-width: 10%;
+    border: 2px solid;
+    border-color: #fff;
+    padding: 15px;
+    border-radius: 30%;"
                             src="{{ asset('assets/images/logo.png') }}"
                             alt="aazer"
                         />
