@@ -8,7 +8,6 @@
     align-items: center;
     gap: 8px;
     padding: 0 20px !important;
-    color: #1d1d24 !important;
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
@@ -135,14 +134,14 @@ html[dir='rtl'] .language-dropdown a.active::after {
         margin-top: 10px;
         padding-top: 10px;
     }
-    
+
     .language-dropdown-toggle {
         padding: 15px 20px !important;
         color: white !important;
         justify-content: space-between;
         width: 100%;
     }
-    
+
     .language-dropdown {
         position: static;
         display: none !important;
@@ -153,27 +152,27 @@ html[dir='rtl'] .language-dropdown a.active::after {
         border-radius: 0;
         padding: 0;
     }
-    
+
     .language-menu-item.active .language-dropdown {
         display: block !important;
     }
-    
+
     .language-dropdown a {
         color: rgba(255, 255, 255, 0.8);
         padding: 12px 20px 12px 40px;
     }
-    
+
     .language-dropdown a:hover,
     .language-dropdown a.active {
         color: white;
         background: rgba(248, 31, 1, 0.3);
         padding-left: 45px;
     }
-    
+
     html[dir='rtl'] .language-dropdown a {
         padding: 12px 40px 12px 20px;
     }
-    
+
     html[dir='rtl'] .language-dropdown a:hover,
     html[dir='rtl'] .language-dropdown a.active {
         padding-right: 45px;

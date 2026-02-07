@@ -267,6 +267,20 @@ Index All JS
     }
     mobileMenuActive()
 
+    /*--------------------------------
+        Language Switcher Dropdown
+    ---------------------------------*/
+    $('.language-dropdown-toggle').on('click', function(e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('active');
+    });
+
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.language-menu-item').length) {
+            $('.language-menu-item').removeClass('active');
+        }
+    });
+
 
     /*--------------------------------
         12. Smoth Scroll

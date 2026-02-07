@@ -1,10 +1,10 @@
 
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}" @if(app()->getLocale() == 'ar') dir="rtl" @endif>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Aazer - Education Specialists</title>
+    <title>{{ __('messages.education_consultancy') }} - Aazer</title>
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Specialized consultancy services for early childhood education in Saudi Arabia. Expert guidance in curriculum development, facility planning, and quality assurance." />
     <meta
@@ -19,14 +19,23 @@
         href="assets/images/favicon.ico"
     />
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
     <!-- CSS
     ============================================ -->
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    @if(app()->getLocale() == 'ar')
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    @else
+        <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    @endif
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/plugins.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/language-switcher.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/menu-language-dropdown.css') }}" />
 </head>
 
 <body>
@@ -81,19 +90,40 @@
                     <nav class="main-menu-navbar">
                         <ul class="mainmenu">
                             <li>
-                                <a href="#home">Home</a>
+                                <a href="#home">{{ __('messages.home') }}</a>
                             </li>
                             <li>
-                                <a href="#about">About</a>
+                                <a href="#about">{{ __('messages.about') }}</a>
                             </li>
                             <li>
-                                <a href="#services">Services</a>
+                                <a href="#services">{{ __('messages.services') }}</a>
                             </li>
                             <li>
-                                <a href="#profile">Profile</a>
+                                <a href="#profile">{{ __('messages.profile') }}</a>
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+                                <a href="#contact">{{ __('messages.contact') }}</a>
+                            </li>
+                            <li class="language-menu-item">
+                                <a class="language-dropdown-toggle">
+                                    <img src="{{ app()->getLocale() == 'ar' ? asset('assets/images/flag-ar.svg') : asset('assets/images/flag-en.svg') }}" alt="{{ app()->getLocale() }}" class="flag-icon-small">
+                                    {{ app()->getLocale() == 'ar' ? 'العربية' : 'English' }}
+                                    <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <ul class="language-dropdown">
+                                    <li>
+                                        <a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'active' : '' }}">
+                                            <img src="{{ asset('assets/images/flag-en.svg') }}" alt="English" class="flag-icon-small">
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('lang.switch', 'ar') }}" class="{{ app()->getLocale() == 'ar' ? 'active' : '' }}">
+                                            <img src="{{ asset('assets/images/flag-ar.svg') }}" alt="Arabic" class="flag-icon-small">
+                                            العربية
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
@@ -130,10 +160,10 @@
                         <div class="col-lg-12">
                             <div class="inner">
                                 <h1 class="title theme-gradient">
-                                    Education Consultancy
+                                    {{ __('messages.education_consultancy') }}
                                 </h1>
                                 <p class="description" style="color: #ffffff; font-size: 18px; margin-top: 20px;">
-                                    "Every student deserves a great educator, not by chance, but by design."
+                                    {{ __('messages.hero_desc') }}
                                 </p>
                             </div>
                         </div>
@@ -150,9 +180,9 @@
                                         />
                                     </div>
                                     <div class="content">
-                                        <h3 class="title">Professionalism</h3>
+                                        <h3 class="title">{{ __('messages.professionalism') }}</h3>
                                         <p>
-                                            Expert consultancy services backed by over 60 years of combined experience in early childhood education.
+                                            {{ __('messages.professionalism_desc') }}
                                         </p>
                                     </div>
                                 </div>
@@ -169,9 +199,9 @@
                                         />
                                     </div>
                                     <div class="content">
-                                        <h3 class="title">Quality Standards</h3>
+                                        <h3 class="title">{{ __('messages.quality_standards') }}</h3>
                                         <p>
-                                            Services based on the latest internationally recognized standards and research in early childhood education.
+                                            {{ __('messages.quality_standards_desc') }}
                                         </p>
                                     </div>
                                 </div>
@@ -188,9 +218,9 @@
                                         />
                                     </div>
                                     <div class="content">
-                                        <h3 class="title">Comprehensive Support</h3>
+                                        <h3 class="title">{{ __('messages.comprehensive_support') }}</h3>
                                         <p>
-                                            Integrated package of educational and operational consultancy services for all your needs.
+                                            {{ __('messages.comprehensive_support_desc') }}
                                         </p>
                                     </div>
                                 </div>
@@ -325,15 +355,15 @@
                                     <div class="about-stats-overlay">
                                         <div class="stat-item">
                                             <span class="stat-number">60+</span>
-                                            <span class="stat-label">Years Experience</span>
+                                            <span class="stat-label">{{ __('messages.years_experience') }}</span>
                                         </div>
                                         <div class="stat-item">
                                             <span class="stat-number">24+</span>
-                                            <span class="stat-label">Years in Field</span>
+                                            <span class="stat-label">{{ __('messages.years_in_field') }}</span>
                                         </div>
                                         <div class="stat-item">
                                             <span class="stat-number">100%</span>
-                                            <span class="stat-label">Dedicated</span>
+                                            <span class="stat-label">{{ __('messages.dedicated') }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -344,16 +374,14 @@
                                 <div class="section-title">
                                     <span class="subtitle" style="color: #f81f01; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 15px;">
                                         <i data-feather="award" style="width: 18px; height: 18px; margin-right: 8px; vertical-align: middle;"></i>
-                                        Excellence in Early Childhood Education
+                                        {{ __('messages.excellence_ece') }}
                                     </span>
-                                    <h2 class="title" style="font-size: 42px; font-weight: 800; line-height: 1.3; margin-bottom: 25px;">Who We Are</h2>
+                                    <h2 class="title" style="font-size: 42px; font-weight: 800; line-height: 1.3; margin-bottom: 25px;">{{ __('messages.who_we_are') }}</h2>
                                     <p class="description" style="font-size: 16px; line-height: 1.9; color: #555; margin-bottom: 30px;">
-                                        <strong style="color: #1e1e1e;">aazer</strong> is a specialized company in educational and operational consultancy services for early childhood in the Kingdom of Saudi Arabia.
-                                        We are managed by a group of <strong style="color: #f81f01;">certified consultants with more than 60 years of combined experience</strong> in the field.
+                                        {!! __('messages.aazer_desc_1') !!}
                                     </p>
                                     <p class="description" style="font-size: 16px; line-height: 1.9; color: #555; margin-bottom: 35px;">
-                                        We provide an integrated package of services that meet the diverse needs of early childhood projects, from planning and curriculum development to quality assurance and accreditation support.
-                                        Our approach combines international best practices with cultural sensitivity to Saudi values and educational goals.
+                                        {{ __('messages.aazer_desc_2') }}
                                     </p>
                                 </div>
 
@@ -482,9 +510,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center mb--50">
-                            <h2 class="title">Our Comprehensive Services</h2>
+                            <h2 class="title">{{ __('messages.comprehensive_services') }}</h2>
                             <p>
-                                We provide an integrated package of educational and operational consultancy services that meet the diverse needs of early childhood projects.
+                                {{ __('messages.services_desc') }}
                             </p>
                         </div>
                     </div>
@@ -498,10 +526,9 @@
                                     <i data-feather="layout"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Planning & Standards Alignment</h3>
+                                    <h3 class="title">{{ __('messages.service_1_title') }}</h3>
                                     <p>
-                                        Reviewing architectural plans and buildings with local and international health and safety standards.
-                                        Participating in brainstorming sessions, reviewing documents, and monitoring implementation progress.
+                                        {{ __('messages.service_1_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -517,10 +544,9 @@
                                     <i data-feather="home"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Building & Environment Development</h3>
+                                    <h3 class="title">{{ __('messages.service_2_title') }}</h3>
                                     <p>
-                                        Providing descriptions of materials and tools based on modern brain research. Designing and furnishing indoor and outdoor
-                                        environments in accordance with approved international standards.
+                                        {{ __('messages.service_2_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -536,10 +562,9 @@
                                     <i data-feather="users"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Recruitment & Staffing</h3>
+                                    <h3 class="title">{{ __('messages.service_3_title') }}</h3>
                                     <p>
-                                        Recruiting and selecting qualified professionals across all specialties for early childhood centers. Designing job advertisements,
-                                        conducting interviews, and providing final candidate recommendations.
+                                        {{ __('messages.service_3_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -555,10 +580,9 @@
                                     <i data-feather="book-open"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Curriculum Selection & Alignment</h3>
+                                    <h3 class="title">{{ __('messages.service_4_title') }}</h3>
                                     <p>
-                                        Selecting appropriate curricula aligned with institution's vision. Reviewing values and content for Islamic and cultural alignment.
-                                        Integrating Saudi/Arab identity into foreign curricula with heritage stories and enrichment programs.
+                                        {{ __('messages.service_4_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -574,10 +598,9 @@
                                     <i data-feather="box"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Furniture & Learning Environment</h3>
+                                    <h3 class="title">{{ __('messages.service_5_title') }}</h3>
                                     <p>
-                                        Selecting appropriate furniture based on safety standards, developmental characteristics, and learning domains.
-                                        Providing procurement procedures, installation models, warranty periods, and certifications.
+                                        {{ __('messages.service_5_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -593,10 +616,9 @@
                                     <i data-feather="clipboard"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Organizational Structure Review</h3>
+                                    <h3 class="title">{{ __('messages.service_6_title') }}</h3>
                                     <p>
-                                        Reviewing organizational structures and administrative manuals. Ensuring compliance with best practices and
-                                        operational efficiency for early childhood centers.
+                                        {{ __('messages.service_6_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -612,10 +634,9 @@
                                     <i data-feather="award"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Training & Workshops</h3>
+                                    <h3 class="title">{{ __('messages.service_7_title') }}</h3>
                                     <p>
-                                        Providing foundational training and specialized workshops on current topics in early childhood.
-                                        Designing customized training programs according to project needs.
+                                        {{ __('messages.service_7_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -631,10 +652,9 @@
                                     <i data-feather="monitor"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Electronic Management System</h3>
+                                    <h3 class="title">{{ __('messages.service_8_title') }}</h3>
                                     <p>
-                                        Comprehensive electronic system covering accounting, finance, HR, and payroll compliant with Saudi labor laws and GOSI.
-                                        Integrated educational system for lesson planning and parent communication.
+                                        {{ __('messages.service_8_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -650,10 +670,9 @@
                                     <i data-feather="check-circle"></i>
                                 </div>
                                 <div class="content">
-                                    <h3 class="title">Quality Assurance & Accreditation</h3>
+                                    <h3 class="title">{{ __('messages.service_9_title') }}</h3>
                                     <p>
-                                        Monitoring curriculum implementation, conducting periodic developmental visits, and creating structured roadmaps.
-                                        Supporting schools in obtaining international accreditation through training, documentation, and best practices.
+                                        {{ __('messages.service_9_desc') }}
                                     </p>
                                 </div>
                             </div>
@@ -671,10 +690,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center mb--60">
-                            <h2 class="title">Professional Profile</h2>
+                            <h2 class="title">{{ __('messages.professional_profile') }}</h2>
                             <p class="description">
-                                Over 24 years of experience in early childhood education consultancy and development.<br/>
-                                <span style="color: #f81f01; font-weight: 500;">"I practice quality-making in education. A professional developer and designer of early childhood projects."</span>
+                                {{ __('messages.profile_desc') }}<br/>
+                                <span style="color: #f81f01; font-weight: 500;">{{ __('messages.quality_making') }}</span>
                             </p>
                         </div>
                     </div>
@@ -936,10 +955,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center mb--60">
-                            <h2 class="title">Our Core Values</h2>
+                            <h2 class="title">{{ __('messages.core_values') }}</h2>
                             <p class="description">
-                                Guiding principles that define our commitment to excellence in early childhood education.<br/>
-                                We believe that our children deserve the best services, and these values ensure we deliver nothing less.
+                                {{ __('messages.belief_desc') }}
                             </p>
                         </div>
                     </div>
@@ -1201,10 +1219,9 @@
                 <div class="col-lg-6">
                     <div class="footer-left">
                         <div class="inner">
-                            <span>Ready To Get Started</span>
+                            <span>{{ __('messages.ready_to_start') }}</span>
                             <h2>
-                                Let's Transform <br />
-                                Childhood Education
+                                {!! __('messages.transform_childhood') !!}
                             </h2>
                         </div>
                     </div>
@@ -1215,11 +1232,11 @@
                             <!-- Start Single Widget -->
                             <div class="col-lg-6 col-sm-6 col-12">
                                 <div class="footer-widget">
-                                    <h4>Quick Links</h4>
+                                    <h4>{{ __('messages.quick_links') }}</h4>
                                     <ul class="ft-link">
-                                        <li><a href="#about">About Us</a></li>
-                                        <li><a href="#services">Our Services</a></li>
-                                        <li><a href="#profile">Professional Profile</a></li>
+                                        <li><a href="#about">{{ __('messages.about') }}</a></li>
+                                        <li><a href="#services">{{ __('messages.services') }}</a></li>
+                                        <li><a href="#profile">{{ __('messages.profile') }}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -1227,7 +1244,7 @@
                             <!-- Start Single Widget -->
                             <div class="col-lg-6 col-sm-6 col-12 mt_mobile--30">
                                 <div class="footer-widget">
-                                    <h4>Contact Information</h4>
+                                    <h4>{{ __('messages.contact_info') }}</h4>
                                     <ul class="ft-link">
                                         <li>
                                             <a href="mailto:info@aazer.sa">info@aazer.sa</a>
@@ -1257,7 +1274,7 @@
                             <div class="col-lg-12">
                                 <div class="copyright-text">
                                     <p>
-                                        © 2026 aazer.sa. All Rights Reserved.
+                                        © {{ date('Y') }} aazer.sa. {{ __('messages.all_rights_reserved') }}
                                     </p>
                                 </div>
                             </div>
