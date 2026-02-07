@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>{{ __('messages.education_consultancy') }} - Aazer</title>
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="Specialized consultancy services for early childhood education in Saudi Arabia. Expert guidance in curriculum development, facility planning, and quality assurance." />
+    <meta name="description" content="{{ __('messages.meta_description') }}" />
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -49,9 +49,9 @@
                     class="setColor light"
                 >
                     <img src="{{ asset('assets/images/sun-01.svg') }}" alt="Sun images" /><span
-                        title="Light Mode"
+                        title="{{ __('messages.light') }}"
                     >
-                Light</span
+                {{ __('messages.light') }}</span
                     >
                 </a>
             </li>
@@ -64,7 +64,7 @@
                     <img
                         src="{{ asset('assets/images/vector.svg') }}"
                         alt="Vector Images"
-                    /><span title="Dark Mode"> Dark</span>
+                    /><span title="{{ __('messages.dark') }}"> {{ __('messages.dark') }}</span>
                 </a>
             </li>
         </ul>
@@ -469,10 +469,10 @@
                                         <div class="about-feature-box">
                                             <h3>
                                                 <i data-feather="eye" class="me-2"></i>
-                                                Our Vision
+                                                {{ __('messages.our_vision') }}
                                             </h3>
                                             <p>
-                                                To achieve qualitative leadership in providing educational and operational consultancy services for early childhood in the Kingdom of Saudi Arabia, setting the benchmark for excellence and innovation.
+                                                {{ __('messages.vision_desc') }}
                                             </p>
                                         </div>
                                     </div>
@@ -480,18 +480,18 @@
                                         <div class="about-feature-box">
                                             <h3>
                                                 <i data-feather="target" class="me-2"></i>
-                                                Our Mission
+                                                {{ __('messages.our_mission') }}
                                             </h3>
                                             <p>
-                                                To provide integrated, high-quality consultancy and operational services based on the latest internationally recognized standards and research, while respecting and integrating Saudi cultural values and educational priorities.
+                                                {{ __('messages.mission_desc') }}
                                             </p>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="about-belief-quote">
-                                            <h3>Our Fundamental Belief</h3>
+                                            <h3>{{ __('messages.fundamental_belief') }}</h3>
                                             <p>
-                                                We believe that our children deserve the best services. Every student deserves a great educator, not by chance, but by design. This belief drives everything we do.
+                                                {{ __('messages.belief_desc') }}
                                             </p>
                                         </div>
                                     </div>
@@ -838,18 +838,18 @@
                             <div class="profile-icon-wrapper">
                                 <i data-feather="award" class="text-white"></i>
                             </div>
-                            <h3 class="card-title">Study and Training</h3>
+                            <h3 class="card-title">{{ __('messages.profile_card_1_title') }}</h3>
                             <ul>
-                                <li><strong>Higher Diploma Program</strong> in preparing trainers for building leadership capacities for school-based development (American University of Beirut)</li>
-                                <li><strong>Bachelor's Degree</strong> in Early Childhood (King Saud University)</li>
-                                <li><strong>INSEAD Leadership Program</strong></li>
-                                <li><strong>Early Childhood Program</strong></li>
-                                <li><strong>Professional Trainer Program</strong></li>
-                                <li><strong>Quality in Early Childhood Projects Program</strong> (Standards and Requirements)</li>
-                                <li><strong>Backward Planning Program</strong></li>
-                                <li><strong>Strategic Planning Program</strong> for Educational Projects</li>
-                                <li><strong>Certified Trainer Program</strong></li>
-                                <li><strong>Standards and Requirements Program</strong> in School Buildings</li>
+                                <li>{!! __('messages.profile_card_1_item_1') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_2') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_3') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_4') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_5') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_6') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_7') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_8') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_9') !!}</li>
+                                <li>{!! __('messages.profile_card_1_item_10') !!}</li>
                             </ul>
                         </div>
                     </div>
@@ -860,17 +860,17 @@
                             <div class="profile-icon-wrapper">
                                 <i data-feather="book" class="text-white"></i>
                             </div>
-                            <h3 class="card-title">Additional Training & Frameworks</h3>
+                            <h3 class="card-title">{{ __('messages.profile_card_2_title') }}</h3>
                             <ul>
-                                <li><strong>Teaching Strategies</strong></li>
-                                <li><strong>Understand by Design</strong></li>
-                                <li><strong>ECERS</strong> (Early Childhood Environment Rating Scale)</li>
-                                <li><strong>NCFE CACHE</strong></li>
-                                <li><strong>GAS</strong></li>
-                                <li><strong>Relationship Systems Intelligence for Organizations</strong> (CRR Global)</li>
+                                <li>{!! __('messages.profile_card_2_item_1') !!}</li>
+                                <li>{!! __('messages.profile_card_2_item_2') !!}</li>
+                                <li>{!! __('messages.profile_card_2_item_3') !!}</li>
+                                <li>{!! __('messages.profile_card_2_item_4') !!}</li>
+                                <li>{!! __('messages.profile_card_2_item_5') !!}</li>
+                                <li>{!! __('messages.profile_card_2_item_6') !!}</li>
                             </ul>
                             <div class="profile-quote">
-                                "Passion drives me, purpose guides me, and professional competencies lead me. I believe in lifelong learning."
+                                {{ __('messages.profile_quote_2') }}
                             </div>
                         </div>
                     </div>
@@ -881,14 +881,14 @@
                             <div class="profile-icon-wrapper">
                                 <i data-feather="briefcase" class="text-white"></i>
                             </div>
-                            <h3 class="card-title">Key Consultancy Roles</h3>
+                            <h3 class="card-title">{{ __('messages.profile_card_3_title') }}</h3>
                             <ul>
-                                <li><strong>Founder and CEO</strong> of aazer</li>
-                                <li><strong>Consultant</strong> at the Royal Commission for AlUla (General Education Development Program)</li>
-                                <li><strong>Consultant</strong> for "Model Schools" project, Vision Realization Office, Ministry of Education</li>
-                                <li><strong>Consultant</strong> for Prince Mohammed bin Salman Center for Autism and Developmental Disorders</li>
-                                <li><strong>Consultant and Preparer</strong> in the Experts Committee, Tatweer Educational Company</li>
-                                <li><strong>Coach</strong> in Leadership Capacity Building Program for School-Based Development in AlUla</li>
+                                <li>{!! __('messages.profile_card_3_item_1') !!}</li>
+                                <li>{!! __('messages.profile_card_3_item_2') !!}</li>
+                                <li>{!! __('messages.profile_card_3_item_3') !!}</li>
+                                <li>{!! __('messages.profile_card_3_item_4') !!}</li>
+                                <li>{!! __('messages.profile_card_3_item_5') !!}</li>
+                                <li>{!! __('messages.profile_card_3_item_6') !!}</li>
                             </ul>
                         </div>
                     </div>
@@ -899,14 +899,14 @@
                             <div class="profile-icon-wrapper">
                                 <i data-feather="star" class="text-white"></i>
                             </div>
-                            <h3 class="card-title">Leadership & Professional Roles</h3>
+                            <h3 class="card-title">{{ __('messages.profile_card_4_title') }}</h3>
                             <ul>
-                                <li><strong>Director</strong> of Early Childhood Projects at the Childhood Care Association</li>
-                                <li><strong>Member</strong> of the Continuous Development Committee at Dhahran Schools</li>
-                                <li><strong>Early Childhood Teacher</strong> at Riyadh Schools and Dhahran National Schools</li>
-                                <li><strong>Author</strong> of the book "Quality and Sustainability in Early Childhood Projects (Checklists)"</li>
-                                <li><strong>Trainer</strong> on various topics related to early childhood and its projects</li>
-                                <li><strong>Founding Member</strong> of "Let's Read Together for Children" Association in Al-Khobar</li>
+                                <li>{!! __('messages.profile_card_4_item_1') !!}</li>
+                                <li>{!! __('messages.profile_card_4_item_2') !!}</li>
+                                <li>{!! __('messages.profile_card_4_item_3') !!}</li>
+                                <li>{!! __('messages.profile_card_4_item_4') !!}</li>
+                                <li>{!! __('messages.profile_card_4_item_5') !!}</li>
+                                <li>{!! __('messages.profile_card_4_item_6') !!}</li>
                             </ul>
                         </div>
                     </div>
@@ -917,12 +917,12 @@
                             <div class="profile-icon-wrapper">
                                 <i data-feather="users" class="text-white"></i>
                             </div>
-                            <h3 class="card-title">Professional Memberships & Committees</h3>
+                            <h3 class="card-title">{{ __('messages.profile_card_5_title') }}</h3>
                             <ul>
-                                <li><strong>Member</strong> of the Women's Committee – Early Childhood Track, Women's Committee for Community Development, Riyadh Emirate</li>
-                                <li><strong>Consultant</strong> in the National Committee for Child Protection</li>
-                                <li><strong>Member</strong> of the Saudi Society for Special Education</li>
-                                <li><strong>Member</strong> of the Arab Childhood Association</li>
+                                <li>{!! __('messages.profile_card_5_item_1') !!}</li>
+                                <li>{!! __('messages.profile_card_5_item_2') !!}</li>
+                                <li>{!! __('messages.profile_card_5_item_3') !!}</li>
+                                <li>{!! __('messages.profile_card_5_item_4') !!}</li>
                             </ul>
                         </div>
                     </div>
@@ -933,14 +933,14 @@
                             <div class="profile-icon-wrapper">
                                 <i data-feather="compass" class="text-white"></i>
                             </div>
-                            <h3 class="card-title">Additional Roles & Responsibilities</h3>
+                            <h3 class="card-title">{{ __('messages.profile_card_6_title') }}</h3>
                             <ul>
-                                <li>Organizing and participating in dialogue sessions</li>
-                                <li>Participating in forums, exhibitions, and conferences</li>
-                                <li>Planning programs and initiatives</li>
-                                <li>Reviewing educational outcomes and outputs</li>
-                                <li>Building and leading teams</li>
-                                <li>Planning and participating in projects for the non-profit sector</li>
+                                <li>{{ __('messages.profile_card_6_item_1') }}</li>
+                                <li>{{ __('messages.profile_card_6_item_2') }}</li>
+                                <li>{{ __('messages.profile_card_6_item_3') }}</li>
+                                <li>{{ __('messages.profile_card_6_item_4') }}</li>
+                                <li>{{ __('messages.profile_card_6_item_5') }}</li>
+                                <li>{{ __('messages.profile_card_6_item_6') }}</li>
                             </ul>
                         </div>
                     </div>
@@ -1105,12 +1105,12 @@
                                 <div class="value-icon-container">
                                     <i data-feather="award" class="text-white"></i>
                                 </div>
-                                <h4 class="value-title">Professionalism</h4>
+                                <h4 class="value-title">{{ __('messages.value_1_title') }}</h4>
                                 <p class="value-description">
-                                    Delivering expert services with the highest standards of competence and dedication to early childhood education. Our team brings over 60 years of combined experience to every project.
+                                    {{ __('messages.value_1_desc') }}
                                 </p>
                                 <div class="value-highlight">
-                                    <p>Certified consultants with proven track records in transforming educational institutions</p>
+                                    <p>{{ __('messages.value_1_highlight') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -1123,12 +1123,12 @@
                                 <div class="value-icon-container">
                                     <i data-feather="star" class="text-white"></i>
                                 </div>
-                                <h4 class="value-title">Excellence</h4>
+                                <h4 class="value-title">{{ __('messages.value_2_title') }}</h4>
                                 <p class="value-description">
-                                    Ensuring quality in every aspect of our work, aligned with international standards and best practices. We strive for continuous improvement in all our consultancy services.
+                                    {{ __('messages.value_2_desc') }}
                                 </p>
                                 <div class="value-highlight">
-                                    <p>Adherence to ECERS, Teaching Strategies, and globally recognized frameworks</p>
+                                    <p>{{ __('messages.value_2_highlight') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -1141,12 +1141,12 @@
                                 <div class="value-icon-container">
                                     <i data-feather="zap" class="text-white"></i>
                                 </div>
-                                <h4 class="value-title">Innovation</h4>
+                                <h4 class="value-title">{{ __('messages.value_3_title') }}</h4>
                                 <p class="value-description">
-                                    Embracing cutting-edge methodologies and modern brain research to create optimal learning environments. We stay ahead of educational trends and technological advancements.
+                                    {{ __('messages.value_3_desc') }}
                                 </p>
                                 <div class="value-highlight">
-                                    <p>Integrating latest research with practical, culturally-aligned solutions</p>
+                                    <p>{{ __('messages.value_3_highlight') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -1159,12 +1159,12 @@
                                 <div class="value-icon-container">
                                     <i data-feather="users" class="text-white"></i>
                                 </div>
-                                <h4 class="value-title">Collaboration</h4>
+                                <h4 class="value-title">{{ __('messages.value_4_title') }}</h4>
                                 <p class="value-description">
-                                    Working together with institutions, educators, and stakeholders to achieve the best outcomes for children. Building strong partnerships based on trust and mutual growth.
+                                    {{ __('messages.value_4_desc') }}
                                 </p>
                                 <div class="value-highlight">
-                                    <p>Team-based approach ensuring all voices are heard and valued</p>
+                                    <p>{{ __('messages.value_4_highlight') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -1177,12 +1177,12 @@
                                 <div class="value-icon-container">
                                     <i data-feather="shield" class="text-white"></i>
                                 </div>
-                                <h4 class="value-title">Integrity</h4>
+                                <h4 class="value-title">{{ __('messages.value_5_title') }}</h4>
                                 <p class="value-description">
-                                    Maintaining honesty, transparency, and ethical practices in all our consultancy services. We build lasting relationships through trustworthy guidance and authentic support.
+                                    {{ __('messages.value_5_desc') }}
                                 </p>
                                 <div class="value-highlight">
-                                    <p>Transparent processes with clear communication at every stage</p>
+                                    <p>{{ __('messages.value_5_highlight') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -1195,12 +1195,12 @@
                                 <div class="value-icon-container">
                                     <i data-feather="heart" class="text-white"></i>
                                 </div>
-                                <h4 class="value-title">Child-Centered Focus</h4>
+                                <h4 class="value-title">{{ __('messages.value_6_title') }}</h4>
                                 <p class="value-description">
-                                    Every decision we make prioritizes the well-being, development, and future of children. We believe our children deserve nothing less than the absolute best services.
+                                    {{ __('messages.value_6_desc') }}
                                 </p>
                                 <div class="value-highlight">
-                                    <p>Developmentally appropriate practices that nurture each child's unique potential</p>
+                                    <p>{{ __('messages.value_6_highlight') }}</p>
                                 </div>
                             </div>
                         </div>
