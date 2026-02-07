@@ -1,0 +1,182 @@
+/* Language Dropdown in Menu */
+.language-menu-item {
+    position: relative;
+}
+
+.language-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px !important;
+    color: #1d1d24 !important;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.language-dropdown-toggle:hover {
+    color: #f81f01 !important;
+}
+
+.language-dropdown-toggle i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.language-menu-item.active .language-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    min-width: 200px;
+    display: none;
+    z-index: 1000;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.language-menu-item.active .language-dropdown {
+    display: block;
+}
+
+.language-dropdown li {
+    list-style: none;
+    margin: 0;
+}
+
+.language-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #1d1d24;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    gap: 12px;
+}
+
+.language-dropdown a:hover {
+    background: linear-gradient(135deg, rgba(248, 31, 1, 0.1) 0%, rgba(238, 7, 110, 0.1) 100%);
+    color: #f81f01;
+    padding-left: 25px;
+}
+
+.language-dropdown a.active {
+    background: linear-gradient(135deg, #f81f01 0%, #ee076e 100%);
+    color: white;
+    position: relative;
+}
+
+.language-dropdown a.active::after {
+    content: '✓';
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+}
+
+.flag-icon-small {
+    width: 24px;
+    height: 18px;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* RTL adjustments for Arabic */
+html[dir='rtl'] .language-dropdown {
+    right: auto;
+    left: 0;
+}
+
+html[dir='rtl'] .language-dropdown a:hover {
+    padding-left: 20px;
+    padding-right: 25px;
+}
+
+html[dir='rtl'] .language-dropdown a.active::after {
+    right: auto;
+    left: 20px;
+}
+
+/* Desktop specific styles */
+@media (min-width: 992px) {
+    .mainmenu > li.language-menu-item > a {
+        padding: 0 20px !important;
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+    .language-menu-item {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    
+    .language-dropdown-toggle {
+        padding: 15px 20px !important;
+        color: white !important;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .language-dropdown {
+        position: static;
+        display: none !important;
+        box-shadow: none;
+        border: none;
+        background: rgba(0, 0, 0, 0.2);
+        margin-top: 0;
+        border-radius: 0;
+        padding: 0;
+    }
+    
+    .language-menu-item.active .language-dropdown {
+        display: block !important;
+    }
+    
+    .language-dropdown a {
+        color: rgba(255, 255, 255, 0.8);
+        padding: 12px 20px 12px 40px;
+    }
+    
+    .language-dropdown a:hover,
+    .language-dropdown a.active {
+        color: white;
+        background: rgba(248, 31, 1, 0.3);
+        padding-left: 45px;
+    }
+    
+    html[dir='rtl'] .language-dropdown a {
+        padding: 12px 40px 12px 20px;
+    }
+    
+    html[dir='rtl'] .language-dropdown a:hover,
+    html[dir='rtl'] .language-dropdown a.active {
+        padding-right: 45px;
+        padding-left: 20px;
+    }
+}

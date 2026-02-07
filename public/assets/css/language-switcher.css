@@ -1,0 +1,119 @@
+/* Language Switcher Styles */
+.language_switcher {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.language_switcher ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.language_switcher li {
+    margin: 0;
+}
+
+.language_switcher .lang-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.language_switcher .lang-option:hover {
+    background: rgba(248, 31, 1, 0.1);
+    transform: translateX(-5px);
+    border-color: #f81f01;
+}
+
+.language_switcher .lang-option.active {
+    background: #f81f01;
+    color: white;
+    border-color: #f81f01;
+}
+
+.language_switcher .flag-icon {
+    width: 20px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* RTL Support for Arabic */
+html[dir='rtl'] {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir='rtl'] body {
+    font-family: 'Tajawal', 'Arial', sans-serif;
+}
+
+html[dir='rtl'] .language_switcher {
+    left: 20px;
+    right: auto;
+}
+
+html[dir='rtl'] .language_switcher .lang-option:hover {
+    transform: translateX(5px);
+}
+
+html[dir='rtl'] .language_switcher .flag-icon {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .language_switcher {
+        top: 100px;
+        right: 15px;
+        padding: 8px;
+    }
+    
+    .language_switcher .lang-option {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+    
+    .language_switcher .flag-icon {
+        width: 18px;
+        height: 13px;
+    }
+    
+    html[dir='rtl'] .language_switcher {
+        left: 15px;
+        right: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .language_switcher {
+        top: 80px;
+        right: 10px;
+    }
+    
+    html[dir='rtl'] .language_switcher {
+        left: 10px;
+        right: auto;
+    }
+}
